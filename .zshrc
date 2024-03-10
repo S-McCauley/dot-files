@@ -100,7 +100,12 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias obs="/home/steve/stuff/Obsidian-1.5.3.AppImage"
-alias themeconfig="vim ~/.oh-my-zsh/themes/steve.zsh-theme"
+alias themeconfig="nvim ~/.oh-my-zsh/themes/steve.zsh-theme"
+alias updatetime="sudo date -s "$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z""
+
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
